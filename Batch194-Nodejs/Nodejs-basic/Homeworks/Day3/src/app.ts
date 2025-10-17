@@ -40,7 +40,7 @@ app.use('/api/v1/customers', customersRoute);
 app.use('/api/v1/orders', ordersRoute);
 /************END DECLARATION ROUTES********** */
 
-/*********** BEGIN DECLARATION ROUTES (orders) **************** */
+/*********** BEGIN DECLARATION ROUTES (staffs) **************** */
 app.use('/api/v1/staffs', staffsRoute);
 /************END DECLARATION ROUTES********** */
 
