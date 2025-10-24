@@ -2,7 +2,7 @@ import  express, {Express, NextFunction, Response, Request} from 'express';
 import categoriesRoute from './routes/v1/categories.route';
 import createError, {HttpError } from 'http-errors';
 import { ENV } from './config/ENV';
-
+import Student from './models/Student.model';
 const app: Express = express()
 
 /**Cấu hình để nhận request từ Body */
@@ -19,7 +19,12 @@ app.get('/', (req, res) => {
 app.use('/api/v1/categories', categoriesRoute);
 /************END DECLARATION ROUTES********** */
 
-
+app.get('/student', (req, res) =>{
+  res.json({
+    message: 'Danh sách sinh viên',
+    data: Student,
+  })
+})
 
 /*********** BEGIN HANDLE ERRORS **************** */
 

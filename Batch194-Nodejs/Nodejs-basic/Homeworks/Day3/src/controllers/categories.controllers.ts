@@ -2,10 +2,10 @@ import { Request, Response } from "express"
 import createError from 'http-errors';
 import categoriesService from "../services/categories.service";
 import { sendJsonSuccess, SUCCESS } from "../helpers/responseHandler";
-
+import { Category } from "../models/Category.model"
 /** Get All Categories */
-const findAll = (req: Request, res:Response)=>{
-    const categories = categoriesService.findAll();
+const findAll = async (req: Request, res:Response)=>{
+    const categories = await Category.findAll();
     //res.json(categories)
     sendJsonSuccess({
         res,
